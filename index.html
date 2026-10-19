@@ -23,8 +23,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
 
-  <link rel="preload" as="image" href="Imagens/head-4.webp" media="(min-width: 768px)" fetchpriority="high">
-  <link rel="preload" as="image" href="Imagens/head-4m.webp" media="(max-width: 767px)" fetchpriority="high">
+  <link rel="preload" as="image" href="Imagens/hero-yasmin.webp" media="(min-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" href="Imagens/hero-yasmin-m.webp" media="(max-width: 767px)" fetchpriority="high">
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -101,8 +101,8 @@
         </div>
         <figure class="hero__photo">
           <picture>
-            <source media="(max-width: 767px)" srcset="Imagens/head-4m.webp" width="589" height="749">
-            <img src="Imagens/head-4.webp" alt="Yasmin Ferreira sorrindo, sentada" width="579" height="657" fetchpriority="high">
+            <source media="(max-width: 767px)" srcset="Imagens/hero-yasmin-m.webp" width="589" height="749">
+            <img src="Imagens/hero-yasmin.webp" alt="Yasmin Ferreira sorrindo, sentada" width="579" height="657" fetchpriority="high">
           </picture>
         </figure>
       </div>
@@ -182,8 +182,7 @@
 
     <!-- ============ Como começar ============ -->
     <section class="passos" id="como-comecar" aria-labelledby="passos-title">
-      <div class="wrap passos__grid">
-        <div class="passos__text">
+      <div class="wrap">
         <h2 id="passos-title">Como começar</h2>
         <ol class="passos__list">
           <li>
@@ -203,14 +202,19 @@
           <svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>
           Agendar pelo WhatsApp
         </a>
-        </div>
+      </div>
+    </section>
 
+    <!-- ============ Vídeo ============ -->
+    <section class="video-sec" aria-labelledby="video-title">
+      <div class="wrap">
+        <h2 id="video-title">Como funciona o meu trabalho</h2>
+        <p class="video-sec__lead">Em pouco mais de 2 minutos, eu conto como é a terapia comigo.</p>
         <figure class="video" data-youtube="1bo7lfjPIWQ">
-          <button class="video__btn" aria-label="Assistir ao vídeo da Yasmin: como funciona o meu trabalho">
+          <button class="video__btn" aria-label="Assistir ao vídeo: Como funciona o meu trabalho">
             <img src="Imagens/thumbnail.webp" alt="Yasmin Ferreira no vídeo de apresentação" width="1134" height="687" loading="lazy">
             <span class="video__play" aria-hidden="true"></span>
           </button>
-          <figcaption class="video__cap">A Yasmin explica como funciona o trabalho dela (2 min 32 s)</figcaption>
         </figure>
       </div>
     </section>

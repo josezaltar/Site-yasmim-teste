@@ -94,7 +94,7 @@ figure { margin: 0; }
 /* ---------- Topo ---------- */
 .hero { background: var(--beige); overflow: hidden; }
 .hero__grid {
-  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: end; gap: 24px;
   min-height: min(720px, calc(100svh - var(--header-h)));
 }
@@ -109,7 +109,7 @@ figure { margin: 0; }
 .hero__facts li { padding-left: 16px; border-left: 2px solid var(--gold-400); }
 
 /* A foto fica dentro de um arco: o "espaço" da terapia */
-.hero__photo { position: relative; align-self: end; justify-self: center; width: min(100%, 470px); margin-top: 40px; }
+.hero__photo { position: relative; align-self: end; justify-self: center; width: min(100%, 560px); margin-top: 32px; }
 .hero__photo::before {
   content: ""; position: absolute; left: -6%; right: 4%; bottom: 0; top: 18%;
   border-radius: 999px 999px 0 0;
@@ -175,15 +175,14 @@ figure { margin: 0; }
 
 /* ---------- Como começar ---------- */
 .passos { padding-block: var(--section); background: var(--beige); }
-.passos__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
-.passos__list { list-style: none; counter-reset: passo; margin: 1.2em 0 40px; padding: 0; display: grid; gap: 30px; }
-.passos__list li { counter-increment: passo; position: relative; padding-left: 76px; min-height: 64px; }
+.passos__list { list-style: none; counter-reset: passo; margin: 1.2em 0 48px; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 56px); }
+.passos__list li { counter-increment: passo; position: relative; padding-top: 80px; }
 .passos__list li::before {
   content: counter(passo); position: absolute; top: 0; left: 0;
-  font: 400 3.4rem/1 var(--serif); color: var(--gold-600);
+  font: 400 4rem/1 var(--serif); color: var(--gold-600);
 }
 .passos__list li:not(:last-child)::after {
-  content: ""; position: absolute; top: 64px; bottom: -24px; left: 18px; width: 1px; background: rgba(162,104,56,.45);
+  content: ""; position: absolute; top: 32px; left: 60px; right: -28px; height: 1px; background: rgba(162,104,56,.45);
 }
 .passos__list h3 { color: var(--brown-800); }
 .passos__list p { color: var(--brown-800); margin: 0; }
@@ -197,12 +196,15 @@ figure { margin: 0; }
 .sobre__cred li { position: relative; padding-left: 28px; font-weight: 600; color: var(--brown-800); }
 .sobre__cred li::before { content: ""; position: absolute; left: 0; top: .55em; width: 14px; height: 2px; background: var(--green-700); }
 
-.video { margin: 0; }
+.video-sec { padding-block: var(--section); text-align: center; }
+.video-sec__lead { color: var(--brown-800); font-size: var(--t-lg); margin-bottom: 40px; }
+.video { margin: 0 auto; max-width: 1040px; }
 .video__btn { position: relative; display: block; width: 100%; padding: 0; border: 0; border-radius: 22px; box-shadow: 0 30px 60px -30px rgba(48,40,35,.55); overflow: hidden; cursor: pointer; background: var(--brown-800); aspect-ratio: 1134 / 687; }
 .video__btn img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
 .video__btn:hover img { transform: scale(1.03); }
-.video__play { position: absolute; inset: 0; margin: auto; width: 72px; height: 72px; border-radius: 50%; background: rgba(243,239,228,.92); }
-.video__play::after { content: ""; position: absolute; left: 29px; top: 22px; border-left: 22px solid var(--brown-700); border-block: 14px solid transparent; }
+.video__play { position: absolute; inset: 0; margin: auto; width: clamp(64px, 8vw, 96px); height: clamp(64px, 8vw, 96px); border-radius: 50%; background: rgba(243,239,228,.92); transition: transform .2s; }
+.video__btn:hover .video__play { transform: scale(1.06); }
+.video__play::after { content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-35%, -50%); border-left: 26px solid var(--brown-700); border-block: 16px solid transparent; }
 .video__cap { margin: 14px 0 0; font-size: var(--t-sm); color: var(--brown-700); }
 .video iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 22px; display: block; }
 
@@ -274,7 +276,10 @@ figure { margin: 0; }
 @media (max-width: 960px) {
   .sinais__grid, .duvidas__grid { grid-template-columns: 1fr; }
   .ajuda__grid { grid-template-columns: 1fr; }
-  .passos__grid { grid-template-columns: 1fr; }
+  .passos__list { grid-template-columns: 1fr; gap: 28px; }
+  .passos__list li { padding: 0 0 0 76px; min-height: 64px; }
+  .passos__list li::before { font-size: 3.4rem; }
+  .passos__list li:not(:last-child)::after { top: 64px; bottom: -22px; left: 18px; right: auto; width: 1px; height: auto; }
   .sobre__grid { grid-template-columns: 1fr; }
   .sobre__photo { max-width: 420px; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
